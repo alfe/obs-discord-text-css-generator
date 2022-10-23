@@ -1,0 +1,71 @@
+.chat-container {
+  font-family: Whitney;
+  border-radius: 3px;
+  height: 214px;
+  width: 577px
+}
+
+.chat-container .channel-name {
+  line-height: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 3px 3px 0 0
+}
+
+.chat-container .channel-name .pound-sign {
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  font-weight: 500;
+  padding-right: 5px
+}
+
+.chat-container .messages {
+  height: 162px;
+  margin: 0;
+  border-radius: 0 0 3px 3px;
+  list-style-type: none;
+  padding: 8px 20px;
+  overflow: hidden
+}
+
+.chat-container .messages .message {
+  overflow: hidden;
+  padding-bottom: 2px;
+  max-height: 100px;
+  transition: opacity 1s ease-in-out, max-height 0s 1s, padding-bottom 0s 1s
+}
+
+.chat-container .messages .message.hidden {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  max-height: 0;
+  padding-bottom: 0
+}
+
+.chat-container .messages .message .timestamp {
+  text-transform: uppercase;
+  padding-right: 5px;
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  font-weight: 500;
+  line-height: 16px
+}
+
+.chat-container .messages .message .message-text, .chat-container .messages .message .username {
+  padding-right: 5px;
+  font-weight: 600;
+  line-height: 19px
+}
+
+.chat-container .messages .message .message-text {
+  overflow: hidden;
+  word-break: break-word
+}
+
+.chat-container .messages .message .message-text .emoji {
+  vertical-align: middle
+}
