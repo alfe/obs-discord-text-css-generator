@@ -8,11 +8,12 @@ export type SliderListItemProps = {
   title: string;
   disabled?: boolean;
   onChange: (value: string) => void;
+  defaultValue?: number;
   min?: number;
   max?: number;
 };
-const SliderListItem = ({ title, disabled, onChange, min, max }: SliderListItemProps) => {
-  const [value, setValue] = React.useState(0);
+const SliderListItem = ({ title, disabled, onChange, defaultValue, min, max }: SliderListItemProps) => {
+  const [value, setValue] = React.useState(defaultValue || 0);
 
   React.useEffect(() => {
     onChange(`${value}`);
