@@ -21,6 +21,7 @@ const CssMaker = () => {
     username: {},
     messageText: {},
   });
+  const [isLastMessage, setLastMessage] = React.useState<boolean>(false);
 
   console.log(styles)
 
@@ -53,15 +54,45 @@ const CssMaker = () => {
               onChange={(value) => {
                 setStyles({
                   ...styles,
+                  messageText: {
+                    ...styles.messageText,
+                    ...(value === 'bubbles' ? {
+                      color: '#333',
+                    } : {
+                      color: 'initial',
+                    })
+                  },
                   message: {
                     ...styles.message,
                     ...(value === 'bubbles' ? {
                       border: '1px solid #FFFFFF',
                       borderRadius: '8px',
+                      backgroundColor: '#FFFFFF',
+                      color: '#333',
                       padding: '16px',
+                      marginBottom: '16px',
                     } : {
                       border: 'none',
+                      backgroundColor: 'initial',
+                      color: 'initial',
                       padding: '0 0 2px',
+                    })
+                  },
+                  messages: {
+                    ...styles.messages,
+                    ...(value === 'bubbles' ? {
+                      backgroundColor: 'transparent',
+                      height: '100%',
+                    } : {
+                      backgroundColor: 'initial'
+                    })
+                  },
+                  chatContainer: {
+                    ...styles.chatContainer,
+                    ...(value === 'bubbles' ? {
+                      width: '100%',
+                      height: '100%',
+                    } : {
                     })
                   },
                 });
@@ -96,6 +127,28 @@ const CssMaker = () => {
                   },
                 });
               }} />
+            <SelectorListItem
+              title="最後のテキストのみ表示"
+              options={[
+                { label: 'default', value: 'false' },
+                { label: '最後のみ', value: 'true' },
+              ]}
+              onChange={(value) => {
+                console.log(value, value === 'true')
+                setLastMessage(value === 'true');
+                setStyles({
+                  ...styles,
+                  ...(value === 'true' ? {
+                    message_not$l_lastChild$r: {
+                      display: 'none',
+                    },
+                  } : {
+                    message_not$l_lastChild$r: {
+                      display: 'initial',
+                    }
+                  }),
+                });
+              }} />
             {/* <SliderListItem
               title="チャットテキスト大きさ"
               defaultValue={14}
@@ -117,7 +170,9 @@ const CssMaker = () => {
         </InputArea>
       </Grid>
       <Grid item md={6} xs={12} sx={{ overflow: 'hidden' }}>
-        <DiscordIconPreview styles={styles} />
+        <DiscordIconPreview
+          styles={styles}
+          isLastMessage={isLastMessage} />
       </Grid>
       <Grid item xs={12}>
         <CssString value={getCssText(styles)} />

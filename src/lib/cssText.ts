@@ -2,13 +2,16 @@ import { CustomStyle } from "../component/DiscordIconPreview";
 
 const toKebabCase = (string: string) => string
 .replace(/([a-z])([A-Z])/g, "$1-$2")
-.replace(/[\s_]+/g, '-')
+.replace(/[\s]+/g, '-')
+.replace(/\$l+/g, '(')
+.replace(/\$r+/g, ')')
+.replace(/_+/g, ':')
 .toLowerCase();
 
 const toImportant = (property: string, className: string): string => {
-  console.log(property, className);
+  console.log('toImportant', className, property);
   switch (true) {
-    case className === 'name' && property === 'backgroundColor':
+    case className === 'messageText' && property === 'color':
       return ' !important';
 
     default:

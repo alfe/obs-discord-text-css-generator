@@ -22,7 +22,7 @@
 }
 
 .chat-container .messages {
-  height: 162px;
+  /* height: 162px; */
   margin: 0;
   border-radius: 0 0 3px 3px;
   list-style-type: none;
