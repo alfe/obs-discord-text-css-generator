@@ -54,6 +54,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
         chatContainer: {
           width: '100%',
           height: '100%',
+          overflow: 'hidden',
         },
       });
       break;
@@ -94,6 +95,18 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           alignItems: 'flex-start',
           overflow: 'visible',
           maxHeight: 'unset',
+        },
+        messages: {
+          backgroundColor: 'transparent',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+        },
+        chatContainer: {
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
         },
       });
       break;

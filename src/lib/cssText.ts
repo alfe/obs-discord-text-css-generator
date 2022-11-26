@@ -11,6 +11,7 @@ const toKebabCase = (string: string) => string
 const toImportant = (property: string, className: string): string => {
   console.log('toImportant', className, property);
   switch (true) {
+    case className === 'messages' && property === 'backgroundColor':
     case className === 'messageText' && property === 'color':
       return ' !important';
 
@@ -19,8 +20,10 @@ const toImportant = (property: string, className: string): string => {
   }
 }
 
-export const getCssText = (styles: CustomStyle) =>
-(Object.keys(styles) as (keyof CustomStyle)[])
+export const getCssText = (styles: CustomStyle) => `body, #app-mount, #app-mount * {
+  overflow-y: hidden !important;
+}
+${(Object.keys(styles) as (keyof CustomStyle)[])
 .map((className) => (Object.keys(styles[className]).length === 0)
 ? ''
 : `
@@ -30,4 +33,5 @@ export const getCssText = (styles: CustomStyle) =>
   ${toKebabCase(k)}: ${styles[className][k]}${toImportant(k, className)};`)
 .join(` `)}
 }`)
-.join(` `).trim();
+.join(` `).trim()
+}`;

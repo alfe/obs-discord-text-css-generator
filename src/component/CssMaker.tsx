@@ -90,6 +90,22 @@ const CssMaker = () => {
                 });
               }} />
             <SelectorListItem
+              title="新しいメッセージ"
+              options={[
+                { label: '一番下に追加', value: 'column' },
+                { label: '一番上に追加', value: 'column-reverse' },
+              ]}
+              onChange={(value) => {
+                setStyles({
+                  ...styles,
+                  messages: {
+                    ...styles.messages,
+                    display: 'flex',
+                    flexDirection: value,
+                  },
+                });
+              }} />
+            <SelectorListItem
               title="最後のテキストのみ表示"
               options={[
                 { label: 'default', value: 'false' },
