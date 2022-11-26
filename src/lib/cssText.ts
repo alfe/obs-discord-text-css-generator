@@ -24,14 +24,15 @@ export const getCssText = (styles: CustomStyle) => `body, #app-mount, #app-mount
   overflow-y: hidden !important;
 }
 ${(Object.keys(styles) as (keyof CustomStyle)[])
+// @ts-ignore
 .map((className) => (Object.keys(styles[className]).length === 0)
 ? ''
 : `
 #app-mount .${toKebabCase(className)} {${Object
+// @ts-ignore
 .keys(styles[className])
-.map(k => `
-  ${toKebabCase(k)}: ${styles[className][k]}${toImportant(k, className)};`)
-.join(` `)}
+// @ts-ignore
+.map(k => `${toKebabCase(k)}: ${styles[className][k]}${toImportant(k, className)};`).join(` `)}
 }`)
 .join(` `).trim()
 }`;
