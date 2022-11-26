@@ -10,6 +10,7 @@ export type CustomStyle = {
   timestamp: { [key: string]: string };
   username: { [key: string]: string };
   messageText: { [key: string]: string };
+  messageText__before?: { [key: string]: string };
 }
 export type DiscordIconPreviewProps = {
   styles: CustomStyle,
@@ -31,6 +32,7 @@ const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) 
                   <span className="timestamp" style={{ fontSize: 9.655172413793103, ...styles.timestamp }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=10">午後03:30</span>
                   <span className="username" style={styles.username} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=11">ユーザ名</span>
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
+                    <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">ててて</span>
                   </span>
                 </li>
@@ -38,6 +40,7 @@ const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) 
                   <span className="timestamp" style={{ fontSize: 9.655172413793103, ...styles.timestamp }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=10">午後03:30</span>
                   <span className="username" style={styles.username} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=11">ユーザ名</span>
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
+                    <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">🐈</span>
                   </span>
                 </li>
@@ -45,6 +48,7 @@ const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) 
                   <span className="timestamp" style={{ fontSize: 9.655172413793103, ...styles.timestamp }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=10">午後03:30</span>
                   <span className="username" style={styles.username} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=11">ユーザ名</span>
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
+                    <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列</span>
                   </span>
                 </li>
@@ -54,6 +58,7 @@ const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) 
               <span className="timestamp" style={{ fontSize: 9.655172413793103, ...styles.timestamp }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=10">午後03:30</span>
               <span className="username" style={styles.username} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=11">ユーザ名</span>
               <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
+                <div style={{ display: 'none', ...styles.messageText__before }} />
                 <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">トトト</span>
               </span>
             </li>

@@ -31,6 +31,20 @@ const CssMaker = () => {
         <InputArea>
           <List>
             <SelectorListItem
+              title="メッセージスタイル"
+              options={[
+                { label: '文字', value: 'text' },
+                { label: '四角ブロック', value: 'square' },
+                { label: '吹き出し', value: 'bubbles' },
+              ]}
+              onChange={(value) => {
+                cssObj.messageStyle({ value, setStyles });
+              }} />
+          </List>
+        </InputArea>
+        <InputArea>
+          <List>
+            <SelectorListItem
               title="チャンネル名"
               options={[
                 { label: '表示', value: 'true' },
@@ -42,58 +56,6 @@ const CssMaker = () => {
                   channelName: {
                     ...styles.channelName,
                     display: value === 'false' ? 'none' : 'inherit',
-                  },
-                });
-              }} />
-            <SelectorListItem
-              title="メッセージスタイル"
-              options={[
-                { label: '文字', value: 'text' },
-                { label: '吹き出し', value: 'bubbles' },
-              ]}
-              onChange={(value) => {
-                setStyles({
-                  ...styles,
-                  messageText: {
-                    ...styles.messageText,
-                    ...(value === 'bubbles' ? {
-                      color: '#333',
-                    } : {
-                      color: 'initial',
-                    })
-                  },
-                  message: {
-                    ...styles.message,
-                    ...(value === 'bubbles' ? {
-                      border: '1px solid #FFFFFF',
-                      borderRadius: '8px',
-                      backgroundColor: '#FFFFFF',
-                      color: '#333',
-                      padding: '16px',
-                      marginBottom: '16px',
-                    } : {
-                      border: 'none',
-                      backgroundColor: 'initial',
-                      color: 'initial',
-                      padding: '0 0 2px',
-                    })
-                  },
-                  messages: {
-                    ...styles.messages,
-                    ...(value === 'bubbles' ? {
-                      backgroundColor: 'transparent',
-                      height: '100%',
-                    } : {
-                      backgroundColor: 'initial'
-                    })
-                  },
-                  chatContainer: {
-                    ...styles.chatContainer,
-                    ...(value === 'bubbles' ? {
-                      width: '100%',
-                      height: '100%',
-                    } : {
-                    })
                   },
                 });
               }} />
