@@ -28,10 +28,11 @@ const CssMaker = () => {
   return (
     <Grid container spacing={2}>
       <Grid item md={6} xs={12}>
-        <InputArea>
+        <InputArea style={{ marginBottom: '1rem' }}>
           <List>
             <SelectorListItem
               title="メッセージスタイル"
+              isMainStyle
               options={[
                 { label: '文字', value: 'text' },
                 { label: '四角ブロック', value: 'square' },

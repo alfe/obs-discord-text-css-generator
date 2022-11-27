@@ -9,9 +9,10 @@ export type SelectorListItemProps = {
   title: string;
   options: Option[];
   disabled?: boolean;
+  isMainStyle?: boolean; // TODO: コンポーネント分離
   onChange: (value: string) => void;
 };
-const SelectorListItem = ({ title, options, disabled, onChange }: SelectorListItemProps) => {
+const SelectorListItem = ({ title, options, disabled, isMainStyle, onChange }: SelectorListItemProps) => {
   const [value, setValue] = React.useState(options[0].value || '');
 
   React.useEffect(() => {
@@ -25,8 +26,12 @@ const SelectorListItem = ({ title, options, disabled, onChange }: SelectorListIt
   };
   return (
     <ListItem
-      divider
-      sx={{ display: 'flex', justifyContent: 'space-between', ...(disabled && { backgroundColor: '#DDD' }) }}
+      divider={!isMainStyle}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        ...(disabled && { backgroundColor: '#DDD' }),
+      }}
     >
       <FormLabel component="legend">{title}</FormLabel>
       <ToggleButtonGroup

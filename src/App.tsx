@@ -21,11 +21,11 @@ const Header = () => {
     <header>
       <Box sx={{ m: 5 }}>
         <Typography align="center" component="h1" variant="h3" paragraph>
-          DiscordチャットカスタムCSSジェネレーター
+          Discordテキストチャンネル外観変更ジェネレーター
         </Typography>
         <Container>
           <Typography align="center" paragraph>
-            DiscordのチャットをOBS Studioに表示するときに、見た目を変更するためのカスタムCSSをつくるジェネレーター
+            DiscordのテキストチャンネルをOBS Studioに表示するときに、見た目を変更するためのカスタムCSSをつくるジェネレーター
           </Typography>
           <TutorialButton />
         </Container>
