@@ -4,7 +4,7 @@ import List from '@mui/material/List'
 import { useTranslation } from "react-i18next";
 import cssObj from '../lib/cssObj'
 import { getCssText } from '../lib/cssText'
-import DiscordIconPreview, { CustomStyle } from './DiscordIconPreview'
+import DiscordTextPreview, { CustomStyle } from './DiscordTextPreview'
 import SelectorListItem from './SelectorListItem'
 import SliderListItem from './SliderListItem'
 import InputArea from './InputArea'
@@ -148,7 +148,7 @@ const CssMaker = () => {
         </InputArea>
       </Grid>
       <Grid item md={6} xs={12} sx={{ overflow: 'hidden' }}>
-        <DiscordIconPreview
+        <DiscordTextPreview
           styles={styles}
           isLastMessage={isLastMessage} />
       </Grid>

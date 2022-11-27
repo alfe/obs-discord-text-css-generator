@@ -1,11 +1,11 @@
 {
-  "name": "obs-discord-icons-css-generator",
+  "name": "obs-discord-text-css-generator",
   "version": "1.0.2",
-  "description": "Generator to create custom CSS for displaying members of Discord call in OBS Studio, such as jumping, side-by-side or square icons.",
+  "description": "Generator to create custom CSS to change the look of the Discord text chat in OBS Studio.",
   "keywords": [
     "obs",
     "discord",
-    "icons",
+    "text",
     "css",
     "generator"
   ],
@@ -18,7 +18,7 @@
   "homepage": "https://obs-discord-icon.alfebelow.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alfe/obs-discord-icons-css-generator"
+    "url": "https://github.com/alfe/obs-discord-text-css-generator"
   },
   "scripts": {
     "dev": "vite",

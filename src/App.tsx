@@ -1,5 +1,6 @@
-import CssMaker from './component/CssMaker'
 import { Box, Container, Typography } from '@mui/material';
+import CssMaker from './component/CssMaker'
+import TutorialButton from './component/TutorialButton';
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ const Header = () => {
           <Typography align="center" paragraph>
             DiscordのチャットをOBS Studioに表示するときに、見た目を変更するためのカスタムCSSをつくるジェネレーター
           </Typography>
+          <TutorialButton />
         </Container>
       </Box>
     </header>

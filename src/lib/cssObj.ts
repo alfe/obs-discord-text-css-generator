@@ -1,4 +1,4 @@
-import { CustomStyle } from "../component/DiscordIconPreview";
+import { CustomStyle } from "../component/DiscordTextPreview";
 
 type StringValArg = {
   value: string;

@@ -12,11 +12,11 @@ export type CustomStyle = {
   messageText: { [key: string]: string };
   messageText__before?: { [key: string]: string };
 }
-export type DiscordIconPreviewProps = {
+export type DiscordTextPreviewProps = {
   styles: CustomStyle,
   isLastMessage?: boolean;
 }
-const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) => {
+const DiscordTextPreview = ({ styles, isLastMessage }: DiscordTextPreviewProps) => {
   return (
     <div id="app-mount">
       <div style={{ fontFamily: 'Whitney, sans-serif', backgroundColor: 'transparent' }} data-reactid=".0">
@@ -68,5 +68,5 @@ const DiscordIconPreview = ({ styles, isLastMessage }: DiscordIconPreviewProps) 
     </div>
   );
 };
-export default DiscordIconPreview;
+export default DiscordTextPreview;
 
