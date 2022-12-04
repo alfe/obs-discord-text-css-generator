@@ -11,6 +11,7 @@ import SliderListItem from './SliderListItem'
 import InputArea from './InputArea'
 import CssString from './CssString';
 import { Box, Button, ButtonGroup, FormLabel, Skeleton, Typography } from '@mui/material';
+import ColorPickerListItem from './ColorPickerListItem';
 
 const theme = createTheme({
   palette: {
@@ -50,6 +51,7 @@ const CssMaker = () => {
     username: {},
     messageText: {},
   });
+  const [messagesStyle, setMessagesStyle] = React.useState<string>('text');
   const [isLastMessage, setLastMessage] = React.useState<boolean>(false);
   const [isLoading, setLoading] = React.useState<boolean>(false);
 
@@ -72,6 +74,7 @@ const CssMaker = () => {
                 onClick={() => {
                   const value = 'text';
                   cssObj.messageStyle({ value, setStyles });
+                  setMessagesStyle(value);
                   setLoading(true);
                   window.setTimeout(() => {
                     setLoading(false);
@@ -90,6 +93,7 @@ const CssMaker = () => {
                 onClick={() => {
                   const value = 'square';
                   cssObj.messageStyle({ value, setStyles });
+                  setMessagesStyle(value);
                   setLoading(true);
                   window.setTimeout(() => {
                     setLoading(false);
@@ -97,7 +101,6 @@ const CssMaker = () => {
                 }}
               >
                   <span style={{
-                    border: '1px solid rgb(255, 255, 255)',
                     borderRadius: '8px',
                     backgroundColor: 'rgb(255, 255, 255)',
                     color: 'rgb(51, 51, 51)',
@@ -113,6 +116,7 @@ const CssMaker = () => {
                 onClick={() => {
                   const value = 'bubbles';
                   cssObj.messageStyle({ value, setStyles });
+                  setMessagesStyle(value);
                   setLoading(true);
                   window.setTimeout(() => {
                     setLoading(false);
@@ -171,36 +175,6 @@ const CssMaker = () => {
                   });
                 }} />
               <SelectorListItem
-                title="時刻"
-                options={[
-                  { label: '表示', value: 'true' },
-                  { label: '非表示', value: 'false' },
-                ]}
-                onChange={(value) => {
-                  setStyles({
-                    ...styles,
-                    timestamp: {
-                      ...styles.timestamp,
-                      display: value === 'false' ? 'none' : 'initial',
-                    },
-                  });
-                }} />
-              <SelectorListItem
-                title="ユーザ名"
-                options={[
-                  { label: '表示', value: 'true' },
-                  { label: '非表示', value: 'false' },
-                ]}
-                onChange={(value) => {
-                  setStyles({
-                    ...styles,
-                    username: {
-                      ...styles.username,
-                      display: value === 'false' ? 'none' : 'initial',
-                    },
-                  });
-                }} />
-              <SelectorListItem
                 title="新しいメッセージ"
                 options={[
                   { label: '一番下に追加', value: 'column' },
@@ -238,7 +212,49 @@ const CssMaker = () => {
                     }),
                   });
                 }} />
-              {/* <SliderListItem
+              <SelectorListItem
+                title="時刻"
+                options={[
+                  { label: '表示', value: 'true' },
+                  { label: '非表示', value: 'false' },
+                ]}
+                onChange={(value) => {
+                  setStyles({
+                    ...styles,
+                    timestamp: {
+                      ...styles.timestamp,
+                      display: value === 'false' ? 'none' : 'initial',
+                    },
+                  });
+                }} />
+              <SelectorListItem
+                title="ユーザ名"
+                options={[
+                  { label: '表示', value: 'true' },
+                  { label: '非表示', value: 'false' },
+                ]}
+                onChange={(value) => {
+                  setStyles({
+                    ...styles,
+                    username: {
+                      ...styles.username,
+                      display: value === 'false' ? 'none' : 'initial',
+                    },
+                  });
+                }} />
+              <ColorPickerListItem
+                title="チャットテキスト色"
+                defaultValue={messagesStyle === 'text' ? '#ffffff' : '#333333'}
+                onChange={(value) => {
+                  setStyles({
+                    ...styles,
+                    messageText: {
+                      ...styles.messageText,
+                      color: `${value}`,
+                    }
+                  });
+                }} />
+              <SliderListItem
                 title="チャットテキスト大きさ"
                 defaultValue={14}
                 min={0}
@@ -248,13 +264,44 @@ const CssMaker = () => {
                     ...styles,
                     messageText: {
                       ...styles.messageText,
+                      lineHeight: 'initial',
                       fontSize: `${value}px`,
+                    },
+                    message: {
+                      ...styles.message,
+                      maxHeight: 'initial',
                     }
                   });
-                }} /> */}
-              {/* li.message:not(:last-child) {
-                  display: none;
-              } */}
+                }} />
+              {messagesStyle !== 'text' && (
+                <ColorPickerListItem
+                  title="チャット背景色"
+                  defaultValue={messagesStyle === 'text' ? 'rgba(0,0,0,0)' : '#FFFFFF'}
+                  onChange={(value) => {
+                    if (messagesStyle === 'square') {
+                      setStyles({
+                        ...styles,
+                        message: {
+                          ...styles.message,
+                          backgroundColor: `${value}`,
+                        }
+                      });
+                    }
+                    if (messagesStyle === 'bubbles') {
+                      setStyles({
+                        ...styles,
+                        messageText: {
+                          ...styles.messageText,
+                          backgroundColor: `${value}`,
+                        },
+                        messageText__before: {
+                          ...styles.messageText__before,
+                          background: `linear-gradient(143deg, transparent 65%, ${value} 65%, ${value} 100%)`,
+                        }
+                      });
+                    }
+                  }} />
+              )}
             </List>
           </InputArea>
           )}

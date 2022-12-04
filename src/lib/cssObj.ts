@@ -37,7 +37,6 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           color: '#333',
         },
         message: {
-          border: '1px solid #FFFFFF',
           borderRadius: '8px',
           backgroundColor: '#FFFFFF',
           color: '#333',
