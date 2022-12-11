@@ -26,7 +26,6 @@ const SelectorListItem = ({ title, options, disabled, isMainStyle, onChange }: S
   };
   return (
     <ListItem
-      divider={!isMainStyle}
       sx={{
         display: 'flex',
         justifyContent: 'space-between',

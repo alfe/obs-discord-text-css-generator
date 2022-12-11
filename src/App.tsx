@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='App-content'>
       <Header />
-      <Container>
+      <Container maxWidth="xl">
         <CssMaker />
       </Container>
       <Footer />
@@ -19,17 +19,21 @@ export default App
 const Header = () => {
   return (
     <header>
-      <Box sx={{ m: 5 }}>
-        <Typography align="center" component="h1" variant="h3" paragraph>
-          Discordテキストチャンネル外観変更ジェネレーター
-        </Typography>
-        <Container>
-          <Typography align="center" paragraph>
+      <Container maxWidth="xl">
+        <Box sx={{ width: '100%', my: 4, display: 'flex', justifyContent: 'space-between' }}>
+          <Box>
+          <Typography align="left" component="h1" variant="h4" paragraph>
+            Discordテキストチャンネル外観変更ジェネレーター
+          </Typography>
+          <Typography align="left" paragraph>
             DiscordのテキストチャンネルをOBS Studioに表示するときに、見た目を変更するためのカスタムCSSをつくるジェネレーター
           </Typography>
-          <TutorialButton />
-        </Container>
-      </Box>
+          </Box>
+          <Box>
+            <TutorialButton />
+          </Box>
+        </Box>
+      </Container>
     </header>
   );
 };

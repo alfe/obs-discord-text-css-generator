@@ -8,17 +8,15 @@ export type CssStringProps = {
 };
 const CssString = (props: CssStringProps) => {
   return (
-    <InputArea>
-      <OutlinedInput
-        fullWidth
-        multiline
-        endAdornment={
-          <InputAdornment position="end">
-            <ClipboardButton value={props.value} />
-          </InputAdornment>
-        }
-        value={props.value} />
-    </InputArea>
+    <OutlinedInput
+      fullWidth
+      multiline
+      endAdornment={
+        <InputAdornment position="end">
+          <ClipboardButton value={props.value} />
+        </InputAdornment>
+      }
+      value={props.value} />
   );
 };
 export default CssString;

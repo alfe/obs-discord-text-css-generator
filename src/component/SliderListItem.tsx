@@ -25,9 +25,7 @@ const SliderListItem = ({ title, disabled, onChange, defaultValue, min, max }: S
     onChange(`${val}`);
   };
   return (
-    <ListItem
-      divider
-      sx={{ display: 'flex', justifyContent: 'space-between', ...(disabled && { backgroundColor: '#DDD' }) }}
+    <ListItem sx={{ display: 'flex', justifyContent: 'space-between', ...(disabled && { backgroundColor: '#DDD' }) }}
     >
       <FormLabel component="legend">{title}</FormLabel>
       <Box sx={{ width: 250 }}>
