@@ -1,6 +1,6 @@
 {
   "name": "obs-discord-text-css-generator",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Generator to create custom CSS to change the look of the Discord text chat in OBS Studio.",
   "keywords": [
     "obs",
@@ -15,7 +15,7 @@
     "url": "https://alfebelow.com/"
   },
   "license": "MIT",
-  "homepage": "https://obs-discord-icon.alfebelow.com/",
+  "homepage": "https://obs-discord-text.alfebelow.com/",
   "repository": {
     "type": "git",
     "url": "https://github.com/alfe/obs-discord-text-css-generator"

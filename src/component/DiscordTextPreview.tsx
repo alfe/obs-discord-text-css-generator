@@ -7,6 +7,7 @@ export type CustomStyle = {
   poundSign: { [key: string]: string };
   messages: { [key: string]: string };
   message: { [key: string]: string };
+  message_not$l_lastChild$r?: { [key: string]: string };
   timestamp: { [key: string]: string };
   username: { [key: string]: string };
   messageText: { [key: string]: string };

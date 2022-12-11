@@ -204,16 +204,14 @@ const CssMaker = () => {
                   onChange={(value) => {
                     console.log(value, value === 'true')
                     setLastMessage(value === 'true');
+                    const { message_not$l_lastChild$r, ...rest } = styles;
                     setStyles({
-                      ...styles,
+                      ...rest,
                       ...(value === 'true' ? {
                         message_not$l_lastChild$r: {
                           display: 'none',
                         },
                       } : {
-                        message_not$l_lastChild$r: {
-                          display: 'initial',
-                        }
                       }),
                     });
                   }} />
