@@ -9,14 +9,14 @@ const Template: Story<CssStringProps> = (args) => <CssString {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  value: `#app-mount .voice-states {
+  value: `.voiceStates {
   display: flex;
 } 
-#app-mount .voice-state {
+.voiceState {
   display: flex; 
   flex-direction: column;
 }   
-#app-mount .name {
+.name {
   max-width: 64px; 
   box-sizing: border-box; 
   text-overflow: clip; 

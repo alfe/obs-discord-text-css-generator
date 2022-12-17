@@ -89,6 +89,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           zIndex: '0',
         },
         message: {
+          width: '100%',
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'flex-start',
@@ -96,6 +97,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           maxHeight: 'unset',
         },
         messages: {
+          width: '100%',
           backgroundColor: 'transparent',
           height: '100%',
           display: 'flex',
