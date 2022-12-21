@@ -36,7 +36,7 @@ const toImportant = (property: string, className: string): string => {
 const toClassName = (className: string): string => {
   let result = '[class*="Chat_' + toCamelCase(toKebabCase(className));
   const [classNameText, pseudoClassesText] = result.split(':');
-  return classNameText + '"]' + (!pseudoClassesText ? '' : '::' + pseudoClassesText);
+  return classNameText + '__"]' + (!pseudoClassesText ? '' : '::' + pseudoClassesText);
 }
 
 export const getCssText = (styles: CustomStyle) => `body, #root, #root * {

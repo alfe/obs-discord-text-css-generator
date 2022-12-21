@@ -272,7 +272,7 @@ const CssMaker = () => {
                       },
                       message: {
                         ...styles.message,
-                        maxHeight: 'initial',
+                        maxHeight: '80vh',
                       }
                     });
                   }} />

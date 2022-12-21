@@ -37,6 +37,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           color: '#333',
         },
         message: {
+          width: '90%',
           borderRadius: '8px',
           backgroundColor: '#FFFFFF',
           color: '#333',
@@ -45,10 +46,23 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
+          maxHeight: '300px',
+          transition: 'opacity 1s ease-in-out,max-height 0s 1s,padding 0s 1s, margin 0s 1s',
+        },
+        messageHidden: {
+          maxHeight: '0px',
+          padding: '0px 16px',
+          marginBottom: '0px',
+          opacity: '0',
         },
         messages: {
+          width: '100%',
           backgroundColor: 'transparent',
           height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          overflow: 'hidden',
         },
         chatContainer: {
           width: '100%',
@@ -94,7 +108,12 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           flexDirection: 'row',
           alignItems: 'flex-start',
           overflow: 'visible',
-          maxHeight: 'unset',
+          maxHeight: '300px',
+        },
+        messageHidden: {
+          maxHeight: '0px',
+          paddingBottom: '0px',
+          opacity: '0',
         },
         messages: {
           width: '100%',
@@ -102,6 +121,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'flex-start',
           overflow: 'hidden',
         },
         chatContainer: {
