@@ -33,6 +33,11 @@ const Header = () => {
             <TutorialButton />
           </Box>
         </Box>
+        <Typography align="center" paragraph variant="caption">
+          <>※ 2022.12.21 コメントフェードアウトに対応しました</> / 
+          <a href="https://obs-discord-icon.alfebelow.com/">アイコンに見た目に変えたいときはこちら</a> /
+          <a href="https://obs-discord-picture.alfebelow.com/">アイコンから立ち絵に変えたいときはこちら</a> /
+        </Typography>
       </Container>
     </header>
   );
