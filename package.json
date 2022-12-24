@@ -1,6 +1,6 @@
 {
   "name": "obs-discord-text-css-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generator to create custom CSS to change the look of the Discord text chat in OBS Studio.",
   "keywords": [
     "obs",
