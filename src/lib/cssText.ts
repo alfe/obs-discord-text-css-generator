@@ -2,11 +2,11 @@
 import { CustomStyle } from "../component/DiscordTextPreview";
 
 const toKebabCase = (string: string) => string
-.replace(/([a-z])([A-Z])/g, "$1-$2")
-.replace(/[\s]+/g, '-')
-.replace(/\$l+/g, '(')
-.replace(/\$r+/g, ')')
-.replace(/_+/g, ':')
+.replaceAll(/([a-z])([A-Z])/g, "$1-$2")
+.replaceAll(/[\s]+/g, '-')
+.replaceAll("$l", '(')
+.replaceAll("$r", ')')
+.replaceAll("_", ':')
 .toLowerCase();
 
 const toCamelCase = (string: string) => {
@@ -15,7 +15,7 @@ const toCamelCase = (string: string) => {
   for (let i = 1; i < len; i++) {
     str += strings[i].toLowerCase().replace(/^[a-z]/, (value) => value.toUpperCase());
   }
-  return str;
+  return str.replaceAll("lastChild", 'last-child');
 };
 
 const toImportant = (property: string, className: string): string => {
@@ -35,8 +35,8 @@ const toImportant = (property: string, className: string): string => {
 
 const toClassName = (className: string): string => {
   let result = '[class*="Chat_' + toCamelCase(toKebabCase(className));
-  const [classNameText, pseudoClassesText] = result.split(':');
-  return classNameText + '__"]' + (!pseudoClassesText ? '' : '::' + pseudoClassesText);
+  const [classNameText, ...pseudoClassesText] = result.split(':');
+  return classNameText + '__"]' + (pseudoClassesText.length === 0 ? '' : ':' + pseudoClassesText.join(':'));
 }
 
 export const getCssText = (styles: CustomStyle) => `body, #root, #root * {
