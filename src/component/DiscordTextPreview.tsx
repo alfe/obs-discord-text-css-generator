@@ -37,7 +37,7 @@ const DiscordTextPreview = ({ styles, isLastMessage }: DiscordTextPreviewProps) 
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
                     <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">昔の投稿</span>
-                    <div style={{ display: 'none', ...styles.messageText__after }} />
+                    <div style={{ display: 'none', ...styles.messageText__after, left: 'calc(100% - 254px)' }} />
                   </span>
                 </li>
                 <li className="message" style={styles.message} data-reactid=".0.0.$/=11.$9999999/=1$0000000">
@@ -46,7 +46,7 @@ const DiscordTextPreview = ({ styles, isLastMessage }: DiscordTextPreviewProps) 
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
                     <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">🐈ねこ🐈</span>
-                    <div style={{ display: 'none', ...styles.messageText__after }} />
+                    <div style={{ display: 'none', ...styles.messageText__after, left: 'calc(100% - 254px)' }} />
                   </span>
                 </li>
                 <li className="message" style={styles.message} data-reactid=".0.0.$/=11.$9999999/=1$0000000">
@@ -55,7 +55,7 @@ const DiscordTextPreview = ({ styles, isLastMessage }: DiscordTextPreviewProps) 
                   <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
                     <div style={{ display: 'none', ...styles.messageText__before }} />
                     <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列とても長い文字列</span>
-                    <div style={{ display: 'none', ...styles.messageText__after }} />
+                    <div style={{ display: 'none', ...styles.messageText__after, left: 'calc(100% - 254px)' }} />
                   </span>
                 </li>
               </>
@@ -66,7 +66,7 @@ const DiscordTextPreview = ({ styles, isLastMessage }: DiscordTextPreviewProps) 
               <span className="message-text" style={{ color: 'rgba(255, 255, 255, 0.6)', ...styles.messageText }} data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12">
                 <div style={{ display: 'none', ...styles.messageText__before }} />
                 <span data-reactid=".0.0.$/=11.$0000000/=1$0000000.$/=12.0">最新の投稿</span>
-                <div style={{ display: 'none', ...styles.messageText__after }} />
+                <div style={{ display: 'none', ...styles.messageText__after, left: 'calc(100% - 254px)' }} />
               </span>
             </li>
           </ul>
