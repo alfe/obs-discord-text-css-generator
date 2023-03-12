@@ -84,7 +84,7 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           width: '80px',
         },
         messageText: {
-          width: 'calc(100% - 132px)',
+          width: 'calc(100% - 144px)',
           background: '#FFF',
           color: '#333',
           display: 'block',
@@ -100,6 +100,67 @@ const messageStyle = ({ value, setStyles }: StringValArg) => {
           background: 'linear-gradient(143deg, transparent 65%, rgb(255, 255, 255) 65%, rgb(255, 255, 255) 100%)',
           margin: '-8px 0px 0px -36px',
           transform: 'rotateZ(8deg)',
+          zIndex: '0',
+        },
+        message: {
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          overflow: 'visible',
+          maxHeight: '300px',
+        },
+        messageHidden: {
+          maxHeight: '0px',
+          paddingBottom: '0px',
+          opacity: '0',
+        },
+        messages: {
+          width: '100%',
+          backgroundColor: 'transparent',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          overflow: 'hidden',
+        },
+        chatContainer: {
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+        },
+      });
+      break;
+    case 'bubblesRight':
+      setStyles({
+        ...initialStyle,
+        timestamp: {
+          width: '80px',
+          overflow: 'visible',
+          marginRight: '-84px',
+        },
+        username: {
+          margin: '24px 0 0 0',
+          width: '80px',
+        },
+        messageText: {
+          width: 'calc(100% - 188px)',
+          background: '#FFF',
+          color: '#333',
+          display: 'block',
+          padding: '16px',
+          borderRadius: '16px',
+        },
+        messageText__after: {
+          position: 'absolute',
+          display: 'inline-block',
+          content: '""',
+          width: '32px',
+          height: '32px',
+          background: 'linear-gradient(-37deg, transparent 65%, rgb(255, 255, 255) 65%, rgb(255, 255, 255) 100%)',
+          margin: '16px 0px 0px 0px',
+          left: 'calc(100% - 64px)',
+          transform: 'rotateZ(24deg)',
           zIndex: '0',
         },
         message: {

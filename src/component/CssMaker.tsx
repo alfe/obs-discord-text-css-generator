@@ -146,7 +146,42 @@ const CssMaker = () => {
                         transform: 'rotateZ(8deg)',
                         zIndex: '0',
                       }}></span>
-                      吹き出し
+                      吹き出し左
+                    </>
+                  </span>
+              </StyleSelectButton>
+              <StyleSelectButton
+                selected={messagesStyle === 'bubblesRight'}
+                onClick={() => {
+                  const value = 'bubblesRight';
+                  cssObj.messageStyle({ value, setStyles });
+                  setMessagesStyle(value);
+                  setLoading(true);
+                  window.setTimeout(() => {
+                    setLoading(false);
+                  }, 100);
+                }}
+              >
+                  <span style={{
+                    color: 'rgb(51, 51, 51)',
+                    background: 'rgb(255, 255, 255)',
+                    display: 'block',
+                    padding: '16px',
+                    borderRadius: '16px',
+                  }}>
+                    <>
+                      吹き出し右
+                      <span style={{
+                        display: 'inline-block',
+                        position: 'absolute',
+                        content: '""',
+                        width: '32px',
+                        height: '32px',
+                        background: 'linear-gradient(-37deg, transparent 65%, rgb(255, 255, 255) 65%, rgb(255, 255, 255) 100%)',
+                        margin: '16px -36px 0px 0px',
+                        transform: 'rotateZ(24deg)',
+                        zIndex: '0',
+                      }}></span>
                     </>
                   </span>
               </StyleSelectButton>
@@ -290,7 +325,7 @@ const CssMaker = () => {
                           }
                         });
                       }
-                      if (messagesStyle === 'bubbles') {
+                      if (messagesStyle === 'bubbles' || messagesStyle === 'bubblesRight') {
                         setStyles({
                           ...styles,
                           messageText: {
@@ -300,6 +335,10 @@ const CssMaker = () => {
                           messageText__before: {
                             ...styles.messageText__before,
                             background: `linear-gradient(143deg, transparent 65%, ${value} 65%, ${value} 100%)`,
+                          },
+                          messageText__after: {
+                            ...styles.messageText__after,
+                            background: `linear-gradient(-37deg, transparent 65%, ${value} 65%, ${value} 100%)`,
                           }
                         });
                       }
